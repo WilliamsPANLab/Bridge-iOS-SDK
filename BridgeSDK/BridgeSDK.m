@@ -54,6 +54,11 @@
     [SBBComponent(SBBBridgeNetworkManager) restoreBackgroundSession:kBackgroundSessionIdentifier completionHandler:nil];
 }
 
++ (void)setBaseURL:(NSString *)baseURL
+{
+    gSBBBaseURL = baseURL;
+}
+
 + (void)setupWithAppPrefix:(NSString *)appPrefix environment:(SBBEnvironment)environment
 {
     [self setupWithStudy:appPrefix environment:environment];

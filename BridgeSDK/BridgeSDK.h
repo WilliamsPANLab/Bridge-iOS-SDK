@@ -106,6 +106,11 @@ static SBBEnvironment gDefaultEnvironment = kDefaultEnvironment;
  */
 + (void)setupWithAppPrefix:(NSString *)appPrefix __deprecated;
 
+/*!
+ * Used to set base URL for all HTTP requests. Must be run before setup().
+ */
++ (void)setBaseURL:(NSString *)baseURL;
+
 @end
 
 #ifdef __cplusplus

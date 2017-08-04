@@ -33,6 +33,7 @@
 #import "SBBAuthManager.h"
 
 extern SBBEnvironment gSBBDefaultEnvironment;
+extern NSString *gSBBBaseURL;
 
 @protocol SBBAuthManagerInternalProtocol <SBBAuthManagerProtocol>
 

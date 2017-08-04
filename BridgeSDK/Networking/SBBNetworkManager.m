@@ -37,6 +37,7 @@
 #import "NSDate+SBBAdditions.h"
 
 SBBEnvironment gSBBDefaultEnvironment;
+NSString *gSBBBaseURL;
 
 const NSInteger kMaxRetryCount = 5;
 
@@ -130,6 +131,9 @@ NSString *kAPIPrefix = @"webservices";
 
 + (NSString *)baseURLForEnvironment:(SBBEnvironment)environment appURLPrefix:(NSString *)prefix baseURLPath:(NSString *)path
 {
+  if (gSBBBaseURL != nil) {
+    return gSBBBaseURL;
+  }
   NSString *baseURL = nil;
   NSString *host = nil;
 
@@ -142,8 +146,6 @@ NSString *kAPIPrefix = @"webservices";
   } else {
     baseURL = path;
   }
-
-  baseURL = @"http://localhost:8080/mhc/";
   return baseURL;
 }
 
