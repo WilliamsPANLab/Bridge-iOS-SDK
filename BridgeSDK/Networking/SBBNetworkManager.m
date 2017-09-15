@@ -251,6 +251,12 @@ NSString *kAPIPrefix = @"webservices";
       dispatch_once(&onceToken, ^{
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:kBackgroundSessionIdentifier];
         bgSession = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+       
+        // Set the configuration to discretionary 
+        [config setDiscretionary: YES]; 
+         
+        // Set the configuration to run on Wi-Fi only 
+        config.allowsCellularAccess = NO; 
       });
       
       _backgroundSession = bgSession;
