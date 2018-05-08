@@ -116,7 +116,7 @@ NSString *kAPIPrefix = @"webservices";
 @property (nonatomic, strong) NSString * bridgeStudy;
 
 @property (nonatomic, strong) NSURLSession * mainSession; //For data tasks
-@property (nonatomic, strong) NSURLSession * backgroundSession; //For upload/download tasks
+//@property (nonatomic, strong) NSURLSession * backgroundSession; //For upload/download tasks
 
 @property (nonatomic, copy) void (^backgroundCompletionHandler)(void);
 @property (nonatomic, strong) NSMutableDictionary *uploadCompletionHandlers;
@@ -126,6 +126,7 @@ NSString *kAPIPrefix = @"webservices";
 
 @implementation SBBNetworkManager
 @synthesize environment = _environment;
+@synthesize backgroundSession = _backgroundSession;
 @synthesize backgroundTransferDelegate = _backgroundTransferDelegate;
 @synthesize sendCookies = _sendCookies;
 
@@ -737,4 +738,5 @@ NSString *kAPIPrefix = @"webservices";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.serverReachability stopNotifier];
 }
+
 @end

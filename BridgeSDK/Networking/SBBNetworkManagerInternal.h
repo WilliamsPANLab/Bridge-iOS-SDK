@@ -47,7 +47,7 @@ extern NSString *kAPIPrefix;
 @interface SBBNetworkManager (Bridge)
 
 @property (nonatomic, strong) NSURLSession * mainSession; //For data tasks
-@property (nonatomic, strong) NSURLSession * backgroundSession; //For upload/download tasks
+//@property (nonatomic, strong) NSURLSession * backgroundSession; //For upload/download tasks
 
 + (NSString *)baseURLForEnvironment:(SBBEnvironment)environment appURLPrefix:(NSString *)prefix baseURLPath:(NSString *)baseURLPath;
 

@@ -83,6 +83,7 @@ typedef NS_ENUM(NSInteger, SBBEnvironment) {
 @protocol SBBNetworkManagerProtocol <NSObject>
 
 @property (nonatomic) SBBEnvironment environment;
+@property (nonatomic, strong) NSURLSession * backgroundSession; //For upload/download tasks
 
 @property (nonatomic, weak) id<NSURLSessionDataDelegate, NSURLSessionDownloadDelegate> backgroundTransferDelegate;
 
